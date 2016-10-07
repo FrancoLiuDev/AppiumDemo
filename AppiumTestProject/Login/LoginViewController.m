@@ -29,6 +29,9 @@
     self.passWordTextField.delegate = self;
 
 }
+- (IBAction)doBack:(id)sender {
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
 
 - (void)viewWillAppear:(BOOL)animated
 {
@@ -89,7 +92,7 @@
     
     if ((keyBoard_y == frame_y) && (frame_y > 0))
     {
-        [self setViewMovedUp:NO withHight:keyboardFrameEndRect.size.height];
+        //[self setViewMovedUp:NO withHight:keyboardFrameEndRect.size.height];
     }
     
     if (keyBoard_y < frame_y)
@@ -142,13 +145,13 @@
         // 1. move the view's origin up so that the text field that will be hidden come above the keyboard
         // 2. increase the size of the view so that the area behind the keyboard is covered up.
         rect.origin.y -= hight;
-        rect.size.height += hight;
+        //rect.size.height += hight;
     }
     else
     {
         // revert back to the normal state.
         rect.origin.y += hight;
-        rect.size.height -= hight;
+        //rect.size.height -= hight;
     }
     self.view.frame = rect;
     
