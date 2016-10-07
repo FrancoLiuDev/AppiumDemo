@@ -15,6 +15,8 @@
 		0B93C76B1DA76ED9003476DF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0B93C7691DA76ED9003476DF /* LaunchScreen.storyboard */; };
 		0B93C7761DA76ED9003476DF /* AppiumTestProjectTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B93C7751DA76ED9003476DF /* AppiumTestProjectTests.m */; };
 		0B93C7811DA76ED9003476DF /* AppiumTestProjectUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B93C7801DA76ED9003476DF /* AppiumTestProjectUITests.m */; };
+		0B93C7921DA77724003476DF /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B93C7901DA77724003476DF /* LoginViewController.m */; };
+		0B93C7931DA77724003476DF /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0B93C7911DA77724003476DF /* LoginViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +53,9 @@
 		0B93C77C1DA76ED9003476DF /* AppiumTestProjectUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AppiumTestProjectUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0B93C7801DA76ED9003476DF /* AppiumTestProjectUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppiumTestProjectUITests.m; sourceTree = "<group>"; };
 		0B93C7821DA76ED9003476DF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0B93C78F1DA77724003476DF /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LoginViewController.h; path = Login/LoginViewController.h; sourceTree = "<group>"; };
+		0B93C7901DA77724003476DF /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LoginViewController.m; path = Login/LoginViewController.m; sourceTree = "<group>"; };
+		0B93C7911DA77724003476DF /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = LoginViewController.xib; path = Login/LoginViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +106,7 @@
 		0B93C75A1DA76ED9003476DF /* AppiumTestProject */ = {
 			isa = PBXGroup;
 			children = (
+				0B93C78E1DA776F5003476DF /* Login */,
 				0B93C75E1DA76ED9003476DF /* AppDelegate.h */,
 				0B93C75F1DA76ED9003476DF /* AppDelegate.m */,
 				0B93C7611DA76ED9003476DF /* ViewController.h */,
@@ -138,6 +144,16 @@
 				0B93C7821DA76ED9003476DF /* Info.plist */,
 			);
 			path = AppiumTestProjectUITests;
+			sourceTree = "<group>";
+		};
+		0B93C78E1DA776F5003476DF /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				0B93C78F1DA77724003476DF /* LoginViewController.h */,
+				0B93C7901DA77724003476DF /* LoginViewController.m */,
+				0B93C7911DA77724003476DF /* LoginViewController.xib */,
+			);
+			name = Login;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -207,6 +223,7 @@
 				TargetAttributes = {
 					0B93C7571DA76ED8003476DF = {
 						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = MH9NHAC874;
 						ProvisioningStyle = Automatic;
 					};
 					0B93C7701DA76ED9003476DF = {
@@ -246,6 +263,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0B93C7931DA77724003476DF /* LoginViewController.xib in Resources */,
 				0B93C76B1DA76ED9003476DF /* LaunchScreen.storyboard in Resources */,
 				0B93C7681DA76ED9003476DF /* Assets.xcassets in Resources */,
 				0B93C7661DA76ED9003476DF /* Main.storyboard in Resources */,
@@ -273,6 +291,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0B93C7921DA77724003476DF /* LoginViewController.m in Sources */,
 				0B93C7631DA76ED9003476DF /* ViewController.m in Sources */,
 				0B93C7601DA76ED9003476DF /* AppDelegate.m in Sources */,
 				0B93C75D1DA76ED9003476DF /* main.m in Sources */,
@@ -422,6 +441,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = MH9NHAC874;
 				INFOPLIST_FILE = AppiumTestProject/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.leediancn.AppiumTestProject;
@@ -433,6 +453,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = MH9NHAC874;
 				INFOPLIST_FILE = AppiumTestProject/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.leediancn.AppiumTestProject;

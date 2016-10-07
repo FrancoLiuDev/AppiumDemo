@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "LoginViewController.h"
 
 @interface ViewController ()
 
@@ -23,6 +24,14 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (IBAction)clickLoginButton:(id)sender {
+    
+    LoginViewController *viewController = [[LoginViewController alloc] init];
+    //[self.navigationController pushViewController:viewController animated:YES];
+    
+    [self presentViewController:viewController animated:YES completion:nil];
 }
 
 
