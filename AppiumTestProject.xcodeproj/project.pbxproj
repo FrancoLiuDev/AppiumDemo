@@ -17,6 +17,7 @@
 		0B93C7811DA76ED9003476DF /* AppiumTestProjectUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B93C7801DA76ED9003476DF /* AppiumTestProjectUITests.m */; };
 		0B93C7921DA77724003476DF /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B93C7901DA77724003476DF /* LoginViewController.m */; };
 		0B93C7931DA77724003476DF /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0B93C7911DA77724003476DF /* LoginViewController.xib */; };
+		9DA499A31DAC82170017738B /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DA499A21DAC82170017738B /* BaseViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +57,8 @@
 		0B93C78F1DA77724003476DF /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LoginViewController.h; path = Login/LoginViewController.h; sourceTree = "<group>"; };
 		0B93C7901DA77724003476DF /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LoginViewController.m; path = Login/LoginViewController.m; sourceTree = "<group>"; };
 		0B93C7911DA77724003476DF /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = LoginViewController.xib; path = Login/LoginViewController.xib; sourceTree = "<group>"; };
+		9DA499A11DAC82170017738B /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BaseViewController.h; path = Base/BaseViewController.h; sourceTree = "<group>"; };
+		9DA499A21DAC82170017738B /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BaseViewController.m; path = Base/BaseViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +109,7 @@
 		0B93C75A1DA76ED9003476DF /* AppiumTestProject */ = {
 			isa = PBXGroup;
 			children = (
+				9DA499A01DAC81F60017738B /* Base */,
 				0B93C78E1DA776F5003476DF /* Login */,
 				0B93C75E1DA76ED9003476DF /* AppDelegate.h */,
 				0B93C75F1DA76ED9003476DF /* AppDelegate.m */,
@@ -154,6 +158,15 @@
 				0B93C7911DA77724003476DF /* LoginViewController.xib */,
 			);
 			name = Login;
+			sourceTree = "<group>";
+		};
+		9DA499A01DAC81F60017738B /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				9DA499A11DAC82170017738B /* BaseViewController.h */,
+				9DA499A21DAC82170017738B /* BaseViewController.m */,
+			);
+			name = Base;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -292,6 +305,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0B93C7921DA77724003476DF /* LoginViewController.m in Sources */,
+				9DA499A31DAC82170017738B /* BaseViewController.m in Sources */,
 				0B93C7631DA76ED9003476DF /* ViewController.m in Sources */,
 				0B93C7601DA76ED9003476DF /* AppDelegate.m in Sources */,
 				0B93C75D1DA76ED9003476DF /* main.m in Sources */,
@@ -526,6 +540,7 @@
 				0B93C7871DA76ED9003476DF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0B93C7881DA76ED9003476DF /* Build configuration list for PBXNativeTarget "AppiumTestProjectTests" */ = {
 			isa = XCConfigurationList;
@@ -534,6 +549,7 @@
 				0B93C78A1DA76ED9003476DF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0B93C78B1DA76ED9003476DF /* Build configuration list for PBXNativeTarget "AppiumTestProjectUITests" */ = {
 			isa = XCConfigurationList;
@@ -542,6 +558,7 @@
 				0B93C78D1DA76ED9003476DF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

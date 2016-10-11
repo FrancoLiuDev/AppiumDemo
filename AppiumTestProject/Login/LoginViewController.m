@@ -7,6 +7,7 @@
 //
 
 #import "LoginViewController.h"
+#import "BaseViewController.h"
 
 @interface LoginViewController() 
 
@@ -22,12 +23,17 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardDidFrameChange:) name:UIKeyboardDidChangeFrameNotification object:nil];
-    
-    
     self.userTextField.delegate = self;
     self.passWordTextField.delegate = self;
 
+}
+- (IBAction)doClickedLogin:(id)sender {
+    
+   if( [self checkLoginInputText])
+   {
+       [self checkLoginData];
+   }
+    
 }
 - (IBAction)doBack:(id)sender {
     [self dismissViewControllerAnimated:YES completion:nil];
@@ -36,30 +42,12 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    // register for keyboard notifications
-    
-    //[[NSNotificationCenter defaultCenter] addObserver:self
-                                             //selector:@selector(keyboardWillShow)
-                                               //  name:UIKeyboardWillShowNotification
-                                              // object:nil];
-    
-    ///[[NSNotificationCenter defaultCenter] addObserver:self
-                                           //  selector:@selector(keyboardWillHide)
-                                               //  name:UIKeyboardWillHideNotification
-                                               //object:nil];
 }
 
 - (void)viewWillDisappear:(BOOL)animated
 {
     [super viewWillDisappear:animated];
-    // unregister for keyboard notifications while not visible.
-    /*[[NSNotificationCenter defaultCenter] removeObserver:self
-                                                    name:UIKeyboardWillShowNotification
-                                                  object:nil];
     
-    [[NSNotificationCenter defaultCenter] removeObserver:self
-                                                    name:UIKeyboardWillHideNotification
-                                                  object:nil];*/
 }
 
 - (void)didReceiveMemoryWarning {
@@ -70,101 +58,48 @@
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
     
     [textField resignFirstResponder];
+    return YES;
+}
+
+- (BOOL)checkLoginInputText {
     
+    
+    if (self.userTextField.text.length==0){
+        [self showAlertViewWithTitle:@"Warning" withMessage:@"Please input user name"];
+         return NO;
+        
+    }
+    
+    if (self.passWordTextField.text.length==0){
+        [self showAlertViewWithTitle:@"Warning" withMessage:@"Please input user password"];
+        
+        return NO;
+    }
     
     return YES;
 }
 
--(void)keyboardDidFrameChange:(NSNotification *)notification
-{
-    // Animate the current view out of the way
-    NSDictionary* keyboardInfo = [notification userInfo];
-    NSValue* keyboardFrameEnd = [keyboardInfo valueForKey:UIKeyboardFrameEndUserInfoKey];
-    CGRect keyboardFrameEndRect = [keyboardFrameEnd CGRectValue];
+- (void)checkLoginData {
     
-    int keyBoard_y =keyboardFrameEndRect.origin.y;
-    int frame_y=self.view.frame.origin.y+self.view.frame.size.height;
     
-    if ((keyBoard_y > frame_y) )
-    {
-        [self setViewMovedUp:NO withHight:keyboardFrameEndRect.size.height];
-    }
-    
-    if ((keyBoard_y == frame_y) && (frame_y > 0))
-    {
-        //[self setViewMovedUp:NO withHight:keyboardFrameEndRect.size.height];
-    }
-    
-    if (keyBoard_y < frame_y)
-    {
-        [self setViewMovedUp:YES withHight:keyboardFrameEndRect.size.height];
+    if (![self.userTextField.text isEqualToString:@"appium"]){
+        [self showAlertViewWithTitle:@"Warning" withMessage:@"user name invalid"];
+        return;
     }
     
     
     
-}
-
-
-/*-(void)keyboardWillShow:(NSNotification *)notification
-{
-    // Animate the current view out of the way
-    int keyboardHight =[self getKeboardHightWithNotification:notification];
-    
-
-    
-    if (self.view.frame.origin.y >= 0)
-    {
-        [self setViewMovedUp:YES withHight:keyboardHight];
-    }
-    
-}
-
--(void)keyboardWillHide:(NSNotification *)notification {
-    
-    int keyboardHight =[self getKeboardHightWithNotification:notification];
-    
-    if (self.view.frame.origin.y >= 0)
-    {
+    if (![self.passWordTextField.text isEqualToString:@"appiumpwd"]){
+        [self showAlertViewWithTitle:@"Warning" withMessage:@"user password incorrect"];
+         return;
         
     }
-    else if (self.view.frame.origin.y < 0)
-    {
-        [self setViewMovedUp:NO withHight:keyboardHight];
-    }
-}*/
-
-//method to move the view up/down whenever the keyboard is shown/dismissed
--(void)setViewMovedUp:(BOOL)movedUp withHight:(int)hight
-{
-    [UIView beginAnimations:nil context:NULL];
-    [UIView setAnimationDuration:0.3]; // if you want to slide up the view
     
-    CGRect rect = self.view.frame;
-    if (movedUp)
-    {
-        // 1. move the view's origin up so that the text field that will be hidden come above the keyboard
-        // 2. increase the size of the view so that the area behind the keyboard is covered up.
-        rect.origin.y -= hight;
-        //rect.size.height += hight;
-    }
-    else
-    {
-        // revert back to the normal state.
-        rect.origin.y += hight;
-        //rect.size.height -= hight;
-    }
-    self.view.frame = rect;
-    
-    [UIView commitAnimations];
-}
+    [self showAlertViewWithTitle:@"Warning" withMessage:@"Login successful"];
+  }
 
--(int)getKeboardHightWithNotification:(NSNotification *)notification
-{
-    
-    NSLog(@"%f", [notification.userInfo[UIKeyboardFrameEndUserInfoKey] CGRectValue].size.height);
 
-    return [notification.userInfo[UIKeyboardFrameEndUserInfoKey] CGRectValue].size.height;
-}
+
 /*
 #pragma mark - Navigation
 
